@@ -9,9 +9,8 @@ image-version: latest
 modules:
   - type: files
     files:
-      # Copia el archivo del repositorio directamente en la ruta especificada
-      - source: https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-$(rpm -E %fedora)/bieszczaders-kernel-cachyos-fedora-$(rpm -E %fedora).repo
-        destination: /etc/yum.repos.d/bieszczaders-kernel.repo
+      - source: system
+        destination: /
 
   - type: rpm-ostree
     repos:
@@ -22,17 +21,15 @@ modules:
     install:
       - cloudflare-warp
       - code
-      - kernel-cachyos # Se instala el kernel deseado
+      - kernel-cachyos-rt
     remove:
-      # Paquetes que se eliminan del sistema
+      - firefox
+      - firefox-langpacks
       - kernel
       - kernel-core
       - kernel-modules
       - kernel-modules-core
       - kernel-modules-extra
-      - firefox
-      - firefox-langpacks
-
   - type: default-flatpaks
     notify: true
     system:
