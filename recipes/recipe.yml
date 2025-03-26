@@ -47,9 +47,4 @@ modules:
       remove:
         - org.gnome.eog
 
-  - type: commands
-    commands:
-      # Comando para reiniciar el sistema después de realizar los cambios
-      - systemctl reboot
-
   - type: signing
