@@ -30,6 +30,7 @@ jobs:
           - devsetup.yml
           - devsetup-nvidia-open.yml
           - devsetup-nvidia.yml
+          - nvidia-cachy.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Forjando
