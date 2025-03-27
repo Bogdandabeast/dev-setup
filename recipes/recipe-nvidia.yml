@@ -1,11 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: devsetup
+name: devsetup-nvidia
 # description will be included in the image's metadata
-description: es una imagen de mi setup con los drivers de kernel el paquete mesa
+description: es una imagen de mi setup con modulos nvidia para las tarjetas graficas de generacion pascal para abajo
+
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/wayblueorg/hyprland
+base-image: ghcr.io/wayblueorg/hyprland-nvidia
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -20,10 +21,8 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
-      - vstudio.repo
     install:
       - cloudflare-warp
-      - code
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -41,16 +40,9 @@ modules:
         - com.usebottles.bottles
         - com.brave.Browser
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-        - io.github.dvlv.boxbuddyrs
-        - io.podman_desktop.PodmanDesktop
-        - com.github.tchx84.Flatseal
         - org.gnome.Loupe
-        - io.missioncenter.MissionCenter
-        - com.getpostman.Postman
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
-
