@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: devsetup-nvidia-open
+name: nvidia-cachy
 # description will be included in the image's metadata
 description: es una imagen de mi setup con modulos nvidia open turing para arriba
 
