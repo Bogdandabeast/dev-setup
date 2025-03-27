@@ -1,12 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: devsetup-nvidia
+name: devsetup-nvidia-open
 # description will be included in the image's metadata
-description: es una imagen de mi setup con modulos nvidia para las tarjetas graficas de generacion pascal para abajo
+description: es una imagen de mi setup con modulos nvidia open turing para arriba
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/wayblueorg/hyprland-nvidia
+base-image: ghcr.io/wayblueorg/hyprland-nvidia-open
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -41,8 +41,11 @@ modules:
         - com.brave.Browser
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
         - org.gnome.Loupe
+        - org.fedoraproject.MediaWriter
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
+

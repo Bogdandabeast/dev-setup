@@ -47,6 +47,7 @@ modules:
         - org.gnome.Loupe
         - io.missioncenter.MissionCenter
         - com.getpostman.Postman
+        - org.fedoraproject.MediaWriter
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
