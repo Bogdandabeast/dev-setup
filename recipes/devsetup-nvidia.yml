@@ -20,6 +20,9 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - vstudio.repo
+      - https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+    keys:
+      - https://www.virtualbox.org/download/oracle_vbox.asc
     install:
       - cloudflare-warp
       - code
