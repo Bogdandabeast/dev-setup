@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   bluebuild:
-    name: Build Custom Image
+    name: Forjando
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -32,7 +32,7 @@ jobs:
           - devsetup-nvidia.yml
     steps:
       # the build is fully handled by the reusable github action
-      - name: Build Custom Image
+      - name: Forjando
         uses: blue-build/github-action@v1.8
         with:
           recipe: ${{ matrix.recipe }}
