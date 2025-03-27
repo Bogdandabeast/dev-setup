@@ -26,7 +26,6 @@ modules:
     install:
       - cloudflare-warp
       - code
-      - kernel-cachyos-rt
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -36,7 +35,14 @@ modules:
       - kernel-core
       - kernel-modules
       - kernel-modules-core
-      - kernel-modules-extra 
+      - kernel-modules-extra
+    install:
+      - kernel-cachyos-rt
+    replace:
+    - from-repo: https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-$(rpm -E %fedora)/solopasha-hyprland-fedora-$(rpm -E %fedora).repo
+      packages:
+       - hyprland
+       - xdg-desktop-portal-hyprland
       
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
