@@ -48,7 +48,7 @@ modules:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
 
-    type: script
+  - type: script
     scripts:
       - cachykernel.sh # example: run config/scripts/myscript.sh
 
