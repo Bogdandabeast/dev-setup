@@ -45,10 +45,6 @@ modules:
         - org.gnome.eog
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
-  - type: systemd
-    user:
-      enabled:
-        - warp-svc.service # Habilitar el daemon de Warp.
 
   - type: script
     scripts:

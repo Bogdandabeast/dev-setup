@@ -45,10 +45,6 @@ modules:
         - org.gnome.eog
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
-  - type: systemd
-    user:
-      enabled:
-        - warp-svc.service
 
   - type: signing # Configura las políticas y archivos necesarios para imágenes firmadas.
 
