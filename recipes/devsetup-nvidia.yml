@@ -1,21 +1,19 @@
----
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
-name: devsetup-nvidia
-# description will be included in the image's metadata
-description: es una imagen de mi setup con modulos nvidia para las tarjetas graficas de generacion pascal para abajo
 
-# the base image to build on top of (FROM) and the version tag to use
+# Información general de la imagen
+name: devsetup-nvidia-open
+description: Es una imagen de mi setup con módulos Nvidia Open para Turing y generaciones posteriores.
+
+# Base de la imagen y versión
 base-image: ghcr.io/wayblueorg/hyprland-nvidia
-image-version: latest # latest is also supported if you want new updates ASAP
+image-version: latest # También se puede usar "latest" si prefieres las actualizaciones más recientes.
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
+# Configuración de los módulos, ejecutados en orden
 modules:
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: / # Copia todo el contenido del directorio "system" al directorio raíz de la imagen.
 
   - type: rpm-ostree
     repos:
@@ -26,15 +24,14 @@ modules:
       - cloudflare-warp
       - code
     remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      # Ejemplo: eliminar Firefox y sus dependencias en favor de la versión Flatpak.
       - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      
+      - firefox-langpacks
+
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
+    notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
     system:
-      # If no repo information is specified, Flathub will be used by default
+      # Si no se especifica información sobre el repositorio, se usará Flathub por defecto.
       install:
         - com.valvesoftware.Steam
         - com.google.ChromeDev
@@ -46,11 +43,11 @@ modules:
         - org.fedoraproject.MediaWriter
       remove:
         - org.gnome.eog
-    user: {} # Also add Flathub user repo, but no user packages
-    type: systemd
-    
+    user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
+
+  - type: systemd
     user:
       enabled:
         - warp-svc.service
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing # Configura las políticas y archivos necesarios para imágenes firmadas.
