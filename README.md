@@ -74,5 +74,3 @@ Estas imágenes están firmadas con [Sigstore](https://www.sigstore.dev/)'s [cos
 ```bash
 cosign verify --key cosign.pub ghcr.io/bogdandabeast/dev-setup
 ```
-
----
