@@ -21,13 +21,18 @@ modules:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - vstudio.repo
       - https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     keys:
       - https://www.virtualbox.org/download/oracle_vbox.asc
+      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    optfix:
+      - brave.com
     install:
       - cloudflare-warp
       - code
       - VirtualBox
-      - akmod-VirtualBox kernel-devel-$(uname -r)
+      - akmod-VirtualBox
+      - brave-browser
     remove:
       # Ejemplo: eliminar Firefox y sus dependencias en favor de la versión Flatpak.
       - firefox
@@ -42,12 +47,11 @@ modules:
         - com.google.ChromeDev
         - com.heroicgameslauncher.hgl
         - com.usebottles.bottles
-        - com.brave.Browser
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
         - org.gnome.Loupe
-        - org.fedoraproject.MediaWriter
       remove:
         - org.gnome.eog
+        - com.brave.Browser
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
 
