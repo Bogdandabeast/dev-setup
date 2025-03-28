@@ -30,9 +30,16 @@ modules:
     install:
       - cloudflare-warp
       - code
-      - VirtualBox
-      - akmod-VirtualBox
       - brave-browser
+      - virt-install
+      - libvirt-daemon-config-network
+      - libvirt-daemon-kvm
+      - qemu-kvm
+      - virt-manager
+      - virt-viewer
+      - libguestfs-tools
+      - python3-libguestfs
+      - virt-top
     remove:
       # Ejemplo: eliminar Firefox y sus dependencias en favor de la versión Flatpak.
       - firefox
