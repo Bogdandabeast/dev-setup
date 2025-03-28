@@ -27,9 +27,9 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - devsetup.yml
+          #- devsetup.yml
           - devsetup-nvidia-open.yml
-          - devsetup-nvidia.yml
+          #- devsetup-nvidia.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Forjando
