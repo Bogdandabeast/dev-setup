@@ -27,6 +27,7 @@ modules:
       - cloudflare-warp
       - code
       - VirtualBox
+      - akmod-VirtualBox kernel-devel-$(uname -r)
     remove:
       # Ejemplo: eliminar Firefox y sus dependencias en favor de la versión Flatpak.
       - firefox
