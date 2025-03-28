@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 # Información general de la imagen
-name: devsetup-nvidia-open
+name: devsetup-nvidia
 description: Es una imagen de mi setup con módulos Nvidia Open para Turing y generaciones posteriores.
 
 # Base de la imagen y versión
