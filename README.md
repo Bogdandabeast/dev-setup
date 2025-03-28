@@ -46,7 +46,7 @@ Para cambiar una instalación atómica de Fedora existente a la última versión
 
 - Primero cambia a la imagen no firmada para instalar las claves y políticas de firma adecuadas:
   ```bash
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/bogdandabeast/dev-setup:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/bogdandabeast/devsetup-nvidia-open:latest
   ```
 - Reinicia para completar el cambio:
   ```bash
@@ -54,7 +54,7 @@ Para cambiar una instalación atómica de Fedora existente a la última versión
   ```
 - Luego cambia a la imagen firmada, de la siguiente manera:
   ```bash
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/bogdandabeast/dev-setup:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/bogdandabeast/devsetup-nvidia-open:latest
   ```
 - Reinicia nuevamente para completar la instalación:
   ```bash
