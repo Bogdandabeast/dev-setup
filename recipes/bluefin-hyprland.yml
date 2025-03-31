@@ -26,10 +26,6 @@ modules:
       - brave.com
     install:
       - hyprland-git
-      - xdg-desktop-portal-hyprland
-      - hyprland-plugins-git
-      - hyprpaper
-      - hyprlock
       - cloudflare-warp
       - brave-browser
     remove:
