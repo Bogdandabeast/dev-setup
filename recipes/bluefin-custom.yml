@@ -32,9 +32,10 @@ modules:
       - hyprlock
       - waybar
       - kitty
-      - waypaper
-      - hyprpaper
-      - hyprshot
+      - hyprland-plugins
+      - pyprland
+      - hyprsunset
+      - hyprsysteminfo
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
