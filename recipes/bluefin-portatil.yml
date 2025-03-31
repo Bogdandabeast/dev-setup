@@ -38,6 +38,7 @@ modules:
       - hyprsysteminfo
       - xdg-desktop-portal-hyprland
       - mpvpaper
+      - uwsm 
       
 
   - type: default-flatpaks
