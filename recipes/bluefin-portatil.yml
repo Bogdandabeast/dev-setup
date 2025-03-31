@@ -41,7 +41,7 @@ modules:
       - hyprpolkitagent
       - hyprnome
       - swww
-      - waybar-git
+      - waybar
       
 
   - type: default-flatpaks
