@@ -39,9 +39,8 @@ modules:
       - mpvpaper
       - uwsm
       - hyprpolkitagent
-      - hyprnome
-      - swww
-      - waybar
+      - waybar-git
+      - cliphist
       
 
   - type: default-flatpaks
