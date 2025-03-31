@@ -28,7 +28,15 @@ modules:
       - cloudflare-warp
       - brave-browser
       - hyprland
-      
+      - xdg-desktop-portal-hyprland
+      - hypridle
+      - hyprlock
+      - waybar
+      - kitty
+      - waypaper
+      - hyprpaper
+      - hyprshot
+
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
     system:
