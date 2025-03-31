@@ -38,7 +38,9 @@ modules:
       - hyprsysteminfo
       - xdg-desktop-portal-hyprland
       - mpvpaper
-      - uwsm 
+      - uwsm
+      - hyprpolkitagent
+      - hyprnome 
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
