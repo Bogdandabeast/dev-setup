@@ -30,7 +30,6 @@ modules:
       - hyprland
       - hypridle
       - hyprlock
-      - waybar
       - kitty
       - hyprland-plugins
       - pyprland
@@ -40,7 +39,8 @@ modules:
       - mpvpaper
       - uwsm
       - hyprpolkitagent
-      - hyprnome 
+      - hyprnome
+      - hyprpanel 
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
