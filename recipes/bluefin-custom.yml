@@ -19,6 +19,7 @@ modules:
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+      - hyprland.repo
     keys:
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     optfix:
@@ -26,16 +27,8 @@ modules:
     install:
       - cloudflare-warp
       - brave-browser
-      - sway
-      - waybar
-      - kitty
-      - swaylock
-      - rofi
-      - dunst
-      - kanshi
-      - imv
-      - light
-
+      - hyprland
+      
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
     system:
