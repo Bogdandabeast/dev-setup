@@ -28,7 +28,6 @@ modules:
       - cloudflare-warp
       - brave-browser
       - hyprland
-      - xdg-desktop-portal-hyprland
       - hypridle
       - hyprlock
       - waybar
