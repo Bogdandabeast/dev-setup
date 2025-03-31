@@ -32,7 +32,12 @@ modules:
       - hyprlock
       - waybar
       - kitty
+      - hyprland-plugins
+      - pyprland
+      - hyprsunset
+      - hyprsysteminfo
       - xdg-desktop-portal-hyprland
+      
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
