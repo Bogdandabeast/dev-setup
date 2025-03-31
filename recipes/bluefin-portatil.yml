@@ -40,7 +40,8 @@ modules:
       - uwsm
       - hyprpolkitagent
       - hyprnome
-      - hyprpanel  
+      - swww
+      - waybar-git
       
 
   - type: default-flatpaks

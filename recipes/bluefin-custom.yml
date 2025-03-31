@@ -40,7 +40,9 @@ modules:
       - uwsm
       - hyprpolkitagent
       - hyprnome
-      - hyprpanel 
+      - swww
+      - waybar-git
+
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
