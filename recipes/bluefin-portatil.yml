@@ -37,7 +37,7 @@ modules:
       - hyprsunset
       - hyprsysteminfo
       - xdg-desktop-portal-hyprland
-      - waypaper
+      - mpvpaper
       
 
   - type: default-flatpaks
