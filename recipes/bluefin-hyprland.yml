@@ -5,7 +5,7 @@ name: hyprland-nvidia-open
 description: Es una imagen de mi setup con módulos Nvidia Open para Turing y generaciones posteriores.
 
 # Base de la imagen y versión
-base-image:  ghcr.io/wayblueorg/hyprland-nvidia-open
+base-image: ghcr.io/ublue-os/bluefin-dx-nvidia-open
 image-version: latest # También se puede usar "latest" si prefieres las actualizaciones más recientes.
 
 # Configuración de los módulos, ejecutados en orden
@@ -19,20 +19,13 @@ modules:
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-      - hyprland.repo
-      - cachy.repo
     keys:
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     optfix:
       - brave.com
     install:
-      - hyprland-git
       - cloudflare-warp
       - brave-browser
-    remove:
-      # Ejemplo: eliminar Firefox y sus dependencias en favor de la versión Flatpak.
-      - firefox
-      - firefox-langpacks
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
@@ -46,7 +39,6 @@ modules:
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
         - org.gnome.Loupe
       remove:
-        - org.gnome.eog
         - com.brave.Browser
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
