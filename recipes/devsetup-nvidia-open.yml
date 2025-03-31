@@ -44,6 +44,12 @@ modules:
       # Ejemplo: eliminar Firefox y sus dependencias en favor de la versión Flatpak.
       - firefox
       - firefox-langpacks
+      - hyprland
+      - waybar
+      - xdg-desktop-portal-hyprland
+      - hyprpaper
+      - hyprlock
+      - hypridle
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
