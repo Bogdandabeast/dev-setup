@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 # Información general de la imagen
-name: hyprland-nvidia-open
+name: bluefin-custom-nvidia-open
 description: Es una imagen de mi setup con módulos Nvidia Open para Turing y generaciones posteriores.
 
 # Base de la imagen y versión
@@ -26,6 +26,15 @@ modules:
     install:
       - cloudflare-warp
       - brave-browser
+      - sway
+      - waybar
+      - kitty
+      - swaylock
+      - rofi
+      - dunst
+      - kanshi
+      - imv
+      - light
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
@@ -44,6 +53,3 @@ modules:
 
 
   - type: signing # Configura las políticas y archivos necesarios para imágenes firmadas.
-
-
-
