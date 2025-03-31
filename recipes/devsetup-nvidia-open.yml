@@ -22,6 +22,7 @@ modules:
       - vstudio.repo
       - https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+      - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-41/solopasha-hyprland-fedora-41.repo
     keys:
       - https://www.virtualbox.org/download/oracle_vbox.asc
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
@@ -50,6 +51,8 @@ modules:
       - hyprpaper
       - hyprlock
       - hypridle
+    install:
+      - hyprland
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
