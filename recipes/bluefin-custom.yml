@@ -27,20 +27,20 @@ modules:
     install:
       - cloudflare-warp
       - brave-browser
-      #- hyprland
-      #- hypridle
-      #- hyprlock
-      #- kitty
-      #- hyprland-plugins
-      #- pyprland
-      #- hyprsunset
-      #- hyprsysteminfo
-      #- xdg-desktop-portal-hyprland
-      #- mpvpaper
-      #- uwsm
-      #- hyprpolkitagent
-      #- waybar-git
-      #- cliphist
+      - hyprland
+      - hypridle
+      - hyprlock
+      - kitty
+      - hyprland-plugins
+      - pyprland
+      - hyprsunset
+      - hyprsysteminfo
+      - xdg-desktop-portal-hyprland
+      - mpvpaper
+      - uwsm
+      - hyprpolkitagent
+      - waybar-git
+      - cliphist
       - deluge
       - bottles
       
