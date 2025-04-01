@@ -57,6 +57,8 @@ modules:
         - io.github.shiftey.Desktop
         - org.gnome.Loupe
         - io.github.dvlv.boxbuddyrs
+        - io.missioncenter.MissionCenter
+        - com.mattjakeman.ExtensionManager
       remove:
         - com.brave.Browser
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
