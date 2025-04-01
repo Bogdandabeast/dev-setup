@@ -41,6 +41,7 @@ modules:
       - hyprpolkitagent
       - waybar-git
       - cliphist
+      - deluge
 
 
   - type: default-flatpaks
@@ -53,7 +54,9 @@ modules:
         - com.heroicgameslauncher.hgl
         - com.usebottles.bottles
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+        - io.github.shiftey.Desktop
         - org.gnome.Loupe
+        - io.github.dvlv.boxbuddyrs
       remove:
         - com.brave.Browser
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
