@@ -27,21 +27,22 @@ modules:
     install:
       - cloudflare-warp
       - brave-browser
-      - hyprland
-      - hypridle
-      - hyprlock
-      - kitty
-      - hyprland-plugins
-      - pyprland
-      - hyprsunset
-      - hyprsysteminfo
-      - xdg-desktop-portal-hyprland
-      - mpvpaper
-      - uwsm
-      - hyprpolkitagent
-      - waybar-git
-      - cliphist
+      #- hyprland
+      #- hypridle
+      #- hyprlock
+      #- kitty
+      #- hyprland-plugins
+      #- pyprland
+      #- hyprsunset
+      #- hyprsysteminfo
+      #- xdg-desktop-portal-hyprland
+      #- mpvpaper
+      #- uwsm
+      #- hyprpolkitagent
+      #- waybar-git
+      #- cliphist
       - deluge
+      - bottles
       
 
   - type: default-flatpaks
@@ -59,6 +60,7 @@ modules:
         - io.github.dvlv.boxbuddyrs
         - io.missioncenter.MissionCenter
         - com.mattjakeman.ExtensionManager
+        - org.keepassxc.KeePassXC
       remove:
         - com.brave.Browser
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
