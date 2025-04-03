@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 # Información general de la imagen
-name: bluefin-custom-nvidia-open
+name: bazzite-custom-nvidia-open
 description: Es una imagen de mi setup con módulos Nvidia Open para Turing y generaciones posteriores.
 
 # Base de la imagen y versión
-base-image: ghcr.io/ublue-os/bluefin-dx-nvidia-open
+base-image: ghcr.io/ublue-os/bazzite-dx-nvidia-open
 image-version: latest # También se puede usar "latest" si prefieres las actualizaciones más recientes.
 
 # Configuración de los módulos, ejecutados en orden
