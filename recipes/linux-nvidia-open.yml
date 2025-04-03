@@ -41,11 +41,9 @@ modules:
         - com.heroicgameslauncher.hgl
         - com.usebottles.bottles
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-        - org.gnome.Loupe
         - io.github.shiftey.Desktop
         - io.github.dvlv.boxbuddyrs
         - io.missioncenter.MissionCenter
-        - com.mattjakeman.ExtensionManager
         - org.keepassxc.KeePassXC
         - ru.linux_gaming.PortProton
       remove:
