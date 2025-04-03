@@ -28,8 +28,6 @@ modules:
       - cloudflare-warp
       - brave-browser
       - deluge
-      - bottles
-      - zram-generator-defaults
       
 
 
@@ -39,7 +37,9 @@ modules:
       # Si no se especifica información sobre el repositorio, se usará Flathub por defecto.
       install:
         - com.valvesoftware.Steam
+        - com.google.ChromeDev
         - com.heroicgameslauncher.hgl
+        - com.usebottles.bottles
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
         - org.gnome.Loupe
         - io.github.shiftey.Desktop
@@ -47,9 +47,9 @@ modules:
         - io.missioncenter.MissionCenter
         - com.mattjakeman.ExtensionManager
         - org.keepassxc.KeePassXC
+        - ru.linux_gaming.PortProton
       remove:
         - com.brave.Browser
-        - com.usebottles.bottles
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
 

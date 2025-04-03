@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 # Información general de la imagen
-name: bluefin-custom
-description: Es una imagen de mi setup para graficas amd 
+name: frankjungla
+description: amd kinoite
 
 # Base de la imagen y versión
-base-image: ghcr.io/ublue-os/bluefin-dx
+base-image: ghcr.io/ublue-os/aurora-dx
 image-version: latest # También se puede usar "latest" si prefieres las actualizaciones más recientes.
 
 # Configuración de los módulos, ejecutados en orden
@@ -19,7 +19,6 @@ modules:
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-      - hyprland.repo
     keys:
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     optfix:
@@ -28,7 +27,10 @@ modules:
       - cloudflare-warp
       - brave-browser
       - deluge
+      - bottles
+      - kitty
       
+
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
@@ -37,22 +39,15 @@ modules:
       install:
         - com.valvesoftware.Steam
         - com.heroicgameslauncher.hgl
+        - com.usebottles.bottles
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-        - org.gnome.Loupe
         - io.github.shiftey.Desktop
         - io.github.dvlv.boxbuddyrs
         - io.missioncenter.MissionCenter
-        - com.mattjakeman.ExtensionManager
         - org.keepassxc.KeePassXC
-        - ru.linux_gaming.PortProton
       remove:
         - com.brave.Browser
-        - com.usebottles.bottles
-        
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
 
   - type: signing # Configura las políticas y archivos necesarios para imágenes firmadas.
-
-
-
