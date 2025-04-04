@@ -28,8 +28,8 @@ jobs:
         recipe:
           # !! Add your recipes here
           #- devsetup.yml
-          - bluefin-custom.yml
-          - bluefin-portatil.yml
+          - linux-nvidia-open.yml
+          - linux-portatil.yml
           #- devsetup-nvidia.yml
     steps:
       # the build is fully handled by the reusable github action
