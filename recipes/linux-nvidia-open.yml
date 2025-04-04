@@ -28,8 +28,6 @@ modules:
       - deluge
     remove:
       - lutris
-      - brave-browser
-      
 
 
   - type: default-flatpaks
