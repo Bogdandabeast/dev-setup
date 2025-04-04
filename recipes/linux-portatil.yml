@@ -19,7 +19,6 @@ modules:
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-      - hyprland.repo
     keys:
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     optfix:

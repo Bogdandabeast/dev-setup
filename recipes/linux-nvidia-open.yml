@@ -19,7 +19,6 @@ modules:
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-      - hyprland.repo
     keys:
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     optfix:
@@ -45,7 +44,7 @@ modules:
         - ru.linux_gaming.PortProton
       remove:
         - com.brave.Browser
-        - 
+        - com.usebottles.bottles
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
 
