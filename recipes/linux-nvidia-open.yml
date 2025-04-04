@@ -26,6 +26,7 @@ modules:
     install:
       - cloudflare-warp
       - deluge
+      - brave-browser
     remove:
       - lutris
 
