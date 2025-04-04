@@ -26,10 +26,10 @@ modules:
       - brave.com
     install:
       - cloudflare-warp
+      - brave-browser
       - deluge
     remove:
       - lutris
-      - brave-browser
       
 
 
@@ -38,7 +38,6 @@ modules:
     system:
       # Si no se especifica información sobre el repositorio, se usará Flathub por defecto.
       install:
-        - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
         - io.github.shiftey.Desktop
         - io.github.dvlv.boxbuddyrs
         - io.missioncenter.MissionCenter
@@ -46,6 +45,7 @@ modules:
         - ru.linux_gaming.PortProton
       remove:
         - com.brave.Browser
+        - 
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
 
