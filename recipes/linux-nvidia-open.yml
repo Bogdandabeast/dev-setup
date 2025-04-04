@@ -25,10 +25,10 @@ modules:
       - brave.com
     install:
       - cloudflare-warp
-      - brave-browser
       - deluge
     remove:
       - lutris
+      - brave-browser
       
 
 
