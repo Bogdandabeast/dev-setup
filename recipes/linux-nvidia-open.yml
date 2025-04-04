@@ -26,8 +26,10 @@ modules:
       - brave.com
     install:
       - cloudflare-warp
-      - brave-browser
       - deluge
+    remove:
+      - lutris
+      - brave-browser
       
 
 
@@ -36,10 +38,6 @@ modules:
     system:
       # Si no se especifica información sobre el repositorio, se usará Flathub por defecto.
       install:
-        - com.valvesoftware.Steam
-        - com.google.ChromeDev
-        - com.heroicgameslauncher.hgl
-        - com.usebottles.bottles
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
         - io.github.shiftey.Desktop
         - io.github.dvlv.boxbuddyrs
