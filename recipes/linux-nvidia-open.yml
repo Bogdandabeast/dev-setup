@@ -41,9 +41,6 @@ modules:
         - io.missioncenter.MissionCenter
         - org.keepassxc.KeePassXC
         - ru.linux_gaming.PortProton
-      remove:
-        - com.brave.Browser
-        - com.usebottles.bottles
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
 
