@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 # Información general de la imagen
-name: bluefin-custom
+name: cosmic
 description: Es una imagen de mi setup para graficas amd 
 
 # Base de la imagen y versión
@@ -29,7 +29,7 @@ modules:
       - brave-browser
       - deluge
       - code
-      
+
       
 
   - type: default-flatpaks
