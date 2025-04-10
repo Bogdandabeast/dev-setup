@@ -53,7 +53,7 @@ modules:
         - io.missioncenter.MissionCenter
         - org.keepassxc.KeePassXC
         - ru.linux_gaming.PortProton
-        - run org.gnome.Boxes
+        - org.gnome.Boxes
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
 
