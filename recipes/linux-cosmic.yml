@@ -2,7 +2,7 @@
 
 # Información general de la imagen
 name: cosmic
-description: Es una imagen de mi setup para graficas amd 
+description: Es una imagen de mi setup para graficas amd con el escritorio cosmic, visual code , maquinas virtuales , etc..
 
 # Base de la imagen y versión
 base-image: ghcr.io/ublue-os/cosmic
