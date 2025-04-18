@@ -18,17 +18,12 @@ modules:
   - type: rpm-ostree
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
-      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
       - vstudio.repo
-    keys:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-    optfix:
-      - brave.com
     install:
       - cloudflare-warp
-      - brave-browser
       - deluge
       - code
+      - firefox
       #virt manager
       - libvirt-daemon-driver-network
       - libvirt-daemon-driver-nodedev 
