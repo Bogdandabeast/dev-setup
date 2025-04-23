@@ -5,8 +5,8 @@ name: cosmic
 description: Es una imagen de mi setup para graficas amd con el escritorio cosmic, visual code , maquinas virtuales , etc..
 
 # Base de la imagen y versión
-base-image: ghcr.io/ublue-os/cosmic
-image-version: 41 # También se puede usar "latest" si prefieres las actualizaciones más recientes.
+base-image: ghcr.io/ublue-os/cosmic-atomic-main
+image-version: latest # También se puede usar "latest" si prefieres las actualizaciones más recientes.
 
 # Configuración de los módulos, ejecutados en orden
 modules:
