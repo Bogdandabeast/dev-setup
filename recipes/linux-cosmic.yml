@@ -6,7 +6,7 @@ description: Es una imagen de mi setup para graficas amd con el escritorio cosmi
 
 # Base de la imagen y versión
 base-image: ghcr.io/ublue-os/cosmic
-image-version: 41 # También se puede usar "latest" si prefieres las actualizaciones más recientes.
+image-version: 42 # También se puede usar "latest" si prefieres las actualizaciones más recientes.
 
 # Configuración de los módulos, ejecutados en orden
 modules:
