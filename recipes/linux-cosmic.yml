@@ -24,6 +24,7 @@ modules:
       - deluge
       - code
       - firefox
+      - zed-preview
       #virt manager
       - libvirt-daemon-driver-network
       - libvirt-daemon-driver-nodedev 
@@ -34,7 +35,7 @@ modules:
       - qemu-device-display-qxl 
       - qemu-device-display-virtio-gpu 
       - qemu-device-display-virtio-vga 
-      - qemu-device-usb-redirect 
+      - qemu-device-usb-redirect
       - qemu-system-x86-core
 
       

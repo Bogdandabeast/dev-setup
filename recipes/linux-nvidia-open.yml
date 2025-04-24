@@ -21,6 +21,7 @@ modules:
     install:
       - cloudflare-warp
       - deluge
+      - zed-preview
       #virt manager
       - libvirt-daemon-driver-network
       - libvirt-daemon-driver-nodedev 
