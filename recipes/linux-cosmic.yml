@@ -38,12 +38,6 @@ modules:
       - qemu-device-usb-redirect
       - qemu-system-x86-core
 
-      
-  - type: script
-    snippets:
-      - "curl -f https://zed.dev/install.sh | sh" # zed editor de codigo 
-      
-
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
     system:
