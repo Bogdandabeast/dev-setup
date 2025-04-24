@@ -19,6 +19,7 @@ modules:
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - vstudio.repo
+      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-42/che-zed-fedora-42.repo
     install:
       - cloudflare-warp
       - deluge
