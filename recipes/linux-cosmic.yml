@@ -24,7 +24,7 @@ modules:
       - deluge
       - code
       - firefox
-      - zed-preview
+      - zed
       #virt manager
       - libvirt-daemon-driver-network
       - libvirt-daemon-driver-nodedev 
