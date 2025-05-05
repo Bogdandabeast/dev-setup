@@ -39,8 +39,10 @@ modules:
       - qemu-device-usb-redirect
       - qemu-system-x86-core
       #cli utilidades
-      - neofetch
+      - fastfetch
       - fish
+      - gh
+      - bat
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
