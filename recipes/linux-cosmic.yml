@@ -38,6 +38,19 @@ modules:
       - qemu-device-display-virtio-vga 
       - qemu-device-usb-redirect
       - qemu-system-x86-core
+      #cli utilidades
+      - neofetch
+      - fish
+      - atuin
+      - bat
+      - direnv
+      - eza
+      - fd
+      - gh
+      - glab
+      - rg
+      - ugrep
+      - zoxide
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
