@@ -41,16 +41,6 @@ modules:
       #cli utilidades
       - neofetch
       - fish
-      - atuin
-      - bat
-      - direnv
-      - eza
-      - fd
-      - gh
-      - glab
-      - rg
-      - ugrep
-      - zoxide
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
