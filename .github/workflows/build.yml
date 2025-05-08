@@ -29,7 +29,7 @@ jobs:
           # !! Add your recipes here
           #- devsetup.yml
           - linux-nvidia-open.yml
-          - linux-cosmic.yml
+          #- linux-cosmic.yml
           - linux-portatil.yml
           #- devsetup-nvidia.yml
     steps:

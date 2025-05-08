@@ -1,26 +1,32 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
-# Información general de la imagen
-name: test-lto
-description: Imagen de prueba con kernel CachyOS LTO
+# Informaci�n general de la imagen
+name: test
+description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext
 
-# Base de la imagen y versión
+# Base de la imagen y versi�n
 base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
 image-version: 42
 
-# Configuración de módulos
+# Configuraci�n de m�dulos
 modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-lto-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
     install:
       - kernel-cachyos-lto
       - kernel-cachyos-lto-devel-matched
+      - libcap-ng-devel
+      - procps-ng-devel
+      - uksmd
+      - scx-scheds
 
   - type: script
     snippets:
       - "echo 'Habilitando SELinux' && setsebool -P domain_kernel_load_modules on"
       - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto"
+      - "echo 'Actualizando libbpf en Silverblue 39 y 40' && rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos-addons libbpf"
 
   - type: files
     files:
@@ -77,5 +83,6 @@ modules:
   - type: signing
 
 alt-tags:
-  - cachyos-lto
+  - cachyos-latest
+
 
