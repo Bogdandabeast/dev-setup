@@ -2,7 +2,7 @@
 
 # Informacion general de la imagen
 name: cosmic
-description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuraci�n para gr�ficas AMD.
+description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuracion para graficas AMD.
 
 # Base de la imagen y versi0n
 base-image: ghcr.io/ublue-os/cosmic-atomic-main
@@ -14,6 +14,9 @@ modules:
     files:
       - source: system
         destination: /
+  - type: script
+    source: local
+    path: install-cachyos-kernel.sh # Define el script externo para instalar el kernel CachyOS
 
   - type: rpm-ostree
     repos:
@@ -45,9 +48,7 @@ modules:
       - gh
       - bat
 
-  #- type: script
-  # source: local
-  # path: install-cachyos-kernel.sh # Define el script externo para instalar el kernel CachyOS
+
 
   - type: default-flatpaks
     notify: true
