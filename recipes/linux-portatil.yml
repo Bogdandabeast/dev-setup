@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
-# Informaci�n general de la imagen
+# Información general de la imagen
 name: test
 description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext
 
-# Base de la imagen y versi�n
+# Base de la imagen y versión
 base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
 image-version: 42
 
-# Configuraci�n de m�dulos
+# Configuración de módulos
 modules:
   - type: rpm-ostree
     repos:
@@ -84,5 +84,6 @@ modules:
 
 alt-tags:
   - cachyos-latest
+
 
 
