@@ -2,7 +2,7 @@
 
 # Información general de la imagen
 name: cosmic
-description: Es una imagen de mi setup para graficas amd con el escritorio cosmic, visual code , maquinas virtuales , etc..
+description: Es una imagen de mi setup para gráficas AMD con el escritorio COSMIC, Visual Studio Code, máquinas virtuales, etc.
 
 # Base de la imagen y versión
 base-image: ghcr.io/ublue-os/cosmic-atomic-main
@@ -26,7 +26,7 @@ modules:
       - code
       - firefox
       - zed
-      #virt manager
+      # Virt-manager y dependencias de virtualización
       - libvirt-daemon-driver-network
       - libvirt-daemon-driver-nodedev 
       - libvirt-daemon-driver-qemu 
@@ -38,11 +38,19 @@ modules:
       - qemu-device-display-virtio-vga 
       - qemu-device-usb-redirect
       - qemu-system-x86-core
-      #cli utilidades
+      # CLI utilidades
       - fastfetch
       - fish
       - gh
       - bat
+
+  - type: script
+    name: install-cachyos-kernel
+    description: Instala el kernel CachyOS y elimina el kernel predeterminado
+    content: |
+      cd /etc/yum.repos.d/
+      wget https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-$(rpm -E %fedora)/bieszczaders-kernel-cachyos-fedora-$(rpm -E %fedora).repo
+      rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos
 
   - type: default-flatpaks
     notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
@@ -62,8 +70,8 @@ modules:
         - org.gnome.Boxes
     user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
 
-
   - type: signing # Configura las políticas y archivos necesarios para imágenes firmadas.
+
 
 
 
