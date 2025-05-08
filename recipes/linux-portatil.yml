@@ -6,7 +6,7 @@ description: imagen de prueba
 
 # Base de la imagen y versión
 base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
-image-version: rawhide
+image-version: 42
 
 # Configuraci�n de m�dulos
 modules:
