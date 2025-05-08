@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
-# Informaci�n general de la imagen
+# Informacion general de la imagen
 name: cosmic
 description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuraci�n para gr�ficas AMD.
 
@@ -44,9 +44,9 @@ modules:
       - gh
       - bat
 
-  - type: script
-    source: local
-    path: install-cachyos-kernel.sh # Define el script externo para instalar el kernel CachyOS
+  #- type: script
+  # source: local
+  # path: install-cachyos-kernel.sh # Define el script externo para instalar el kernel CachyOS
 
   - type: default-flatpaks
     notify: true
