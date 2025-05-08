@@ -5,8 +5,8 @@ name: cosmic
 description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuración para gráficas AMD.
 
 # Base de la imagen y versión
-base-image: ghcr.io/ublue-os/cosmic-atomic-main
-image-version: latest
+base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
+image-version: rawhide
 
 # Configuración de módulos
 modules:
