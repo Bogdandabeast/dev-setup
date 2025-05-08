@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
-# Información general de la imagen
+# Informaci�n general de la imagen
 name: cosmic
-description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuración para gráficas AMD.
+description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuraci�n para gr�ficas AMD.
 
-# Base de la imagen y versión
+# Base de la imagen y versi�n
 base-image: ghcr.io/ublue-os/cosmic-atomic-main
 image-version: latest
 
-# Configuración de módulos
+# Configuraci�n de m�dulos
 modules:
   - type: rpm-ostree
     repos:
@@ -16,8 +16,6 @@ modules:
     install:
       - kernel-cachyos
       - kernel-cachyos-devel-matched
-    allow-erasing: true
-    install-weak-deps: false
 
   - type: script
     snippets:
@@ -80,6 +78,7 @@ modules:
 
 alt-tags:
   - cachyos-latest
+
 
 
 
