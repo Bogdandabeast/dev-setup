@@ -4,11 +4,11 @@
 name: cosmic
 description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuraci�n para gr�ficas AMD.
 
-# Base de la imagen y versi�n
+# Base de la imagen y versi0n
 base-image: ghcr.io/ublue-os/cosmic-atomic-main
 image-version: latest
 
-# Configuraci�n de m�dulos
+# Configuracion de modulos
 modules:
   - type: files
     files:
@@ -27,6 +27,7 @@ modules:
       - firefox
       - zed
       # Virt-manager y dependencias
+      - virt-manager
       - libvirt-daemon-driver-network
       - libvirt-daemon-driver-nodedev 
       - libvirt-daemon-driver-qemu 
