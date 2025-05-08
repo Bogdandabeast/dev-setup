@@ -1,31 +1,54 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 # Información general de la imagen
-name: bluefin-custom
-description: Es una imagen de mi setup para graficas amd 
+name: cosmic
+description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuración para gráficas AMD.
 
 # Base de la imagen y versión
-base-image: ghcr.io/ublue-os/bluefin-dx
-image-version: latest # También se puede usar "latest" si prefieres las actualizaciones más recientes.
+base-image: ghcr.io/ublue-os/cosmic-atomic-main
+image-version: latest
 
-# Configuración de los módulos, ejecutados en orden
+# Configuración de módulos
 modules:
+
   - type: files
     files:
       - source: system
-        destination: / # Copia todo el contenido del directorio "system" al directorio raíz de la imagen.
+        destination: /
 
   - type: rpm-ostree
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
+      - vstudio.repo
+      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-42/che-zed-fedora-42.repo
     install:
       - cloudflare-warp
       - deluge
+      - code
+      - firefox
+      - zed
+      # Virt-manager y dependencias
+      - virt-manager
+      - libvirt-daemon-driver-network
+      - libvirt-daemon-driver-nodedev 
+      - libvirt-daemon-driver-qemu 
+      - libvirt-daemon-driver-storage-core 
+      - qemu-audio-spice 
+      - qemu-char-spice 
+      - qemu-device-display-qxl 
+      - qemu-device-display-virtio-gpu 
+      - qemu-device-display-virtio-vga 
+      - qemu-device-usb-redirect
+      - qemu-system-x86-core
+      # CLI utilidades
+      - fastfetch
+      - fish
+      - gh
+      - bat
 
   - type: default-flatpaks
-    notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
+    notify: true
     system:
-      # Si no se especifica información sobre el repositorio, se usará Flathub por defecto.
       install:
         - com.valvesoftware.Steam
         - com.heroicgameslauncher.hgl
@@ -37,14 +60,10 @@ modules:
         - com.mattjakeman.ExtensionManager
         - org.keepassxc.KeePassXC
         - ru.linux_gaming.PortProton
-      remove:
-        - com.brave.Browser
-        - com.usebottles.bottles
-        
-    user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
+        - org.gnome.Boxes
+    user: {}
 
-
-  - type: signing # Configura las políticas y archivos necesarios para imágenes firmadas.
+  - type: signing
 
 
 
