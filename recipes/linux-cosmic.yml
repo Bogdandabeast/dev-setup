@@ -1,26 +1,26 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
-# Informaci�n general de la imagen
+# Información general de la imagen
 name: cosmic
-description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuraci�n para gr�ficas AMD.
+description: Imagen personalizada con escritorio COSMIC, Visual Studio Code y configuración para gráficas AMD.
 
-# Base de la imagen y versi�n
+# Base de la imagen y versión
 base-image: ghcr.io/ublue-os/cosmic-atomic-main
 image-version: latest
 
-# Configuraci�n de m�dulos
+# Configuración de módulos
 modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
     install:
-      - kernel-cachyos
-      - kernel-cachyos-devel-matched
+      - kernel-cachyos-rt
+      - kernel-cachyos-rt-devel-matched
 
   - type: script
     snippets:
       - "echo 'Habilitando SELinux' && setsebool -P domain_kernel_load_modules on"
-      - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos"
+      - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-rt"
 
   - type: files
     files:
@@ -78,6 +78,7 @@ modules:
 
 alt-tags:
   - cachyos-latest
+
 
 
 
