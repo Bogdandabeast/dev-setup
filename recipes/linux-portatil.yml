@@ -61,6 +61,12 @@ modules:
       - fish
       - gh
       - bat
+      # Fix Codecs & Thumbnails
+      - libavcodec-freeworld
+      - ffmpegthumbs
+      - kffmpegthumbnailer
+      # distrobox
+      - distrobox
 
   - type: default-flatpaks
     notify: true
