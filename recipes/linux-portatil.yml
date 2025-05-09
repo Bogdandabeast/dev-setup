@@ -26,6 +26,7 @@ modules:
     snippets:
       - "echo 'Habilitando SELinux' && setsebool -P domain_kernel_load_modules on"
       - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto"
+      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" #librewolf repo
 
   - type: files
     files:
@@ -41,8 +42,8 @@ modules:
       - cloudflare-warp
       - deluge
       - code
-      - firefox
       - zed
+      - librewolf
       # Virt-manager y dependencias
       - virt-manager
       - libvirt-daemon-driver-network
@@ -69,14 +70,11 @@ modules:
         - com.valvesoftware.Steam
         - com.heroicgameslauncher.hgl
         - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-        - org.gnome.Loupe
         - io.github.shiftey.Desktop
         - io.github.dvlv.boxbuddyrs
         - io.missioncenter.MissionCenter
-        - com.mattjakeman.ExtensionManager
         - org.keepassxc.KeePassXC
         - ru.linux_gaming.PortProton
-        - org.gnome.Boxes
     user: {}
 
   - type: signing
