@@ -12,24 +12,23 @@ image-version: 42
 modules:
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
-      - 
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-42/bieszczaders-kernel-cachyos-fedora-42.repo
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-42/bieszczaders-kernel-cachyos-addons-fedora-42.repo
     install:
       - kernel-cachyos-rt
       - kernel-cachyos-rt-devel-matched
       - libcap-ng-devel
       - procps-ng-devel
       - scx-scheds
-      #- akmod-nvidia
-      #- xorg-x11-drv-nvidia
+      - akmod-nvidia
+      - xorg-x11-drv-nvidia
 
   - type: script
     snippets:
       - "echo 'Habilitando SELinux' && setsebool -P domain_kernel_load_modules on"
       - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-rt"
-      #- "echo 'Configurando NVIDIA Open' && rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
-      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" # librewolf repo
+      - "echo 'Configurando NVIDIA Open' && rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
+      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null"
 
   - type: files
     files:
@@ -40,7 +39,7 @@ modules:
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - vstudio.repo
-      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-%OS_VERSION%/che-zed-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-42/che-zed-fedora-42.repo
     install:
       - cloudflare-warp
       - deluge
@@ -84,6 +83,7 @@ modules:
 
 alt-tags:
   - cachyos-nvidia-latest
+
 
 
 
