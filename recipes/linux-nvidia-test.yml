@@ -38,10 +38,6 @@ modules:
       - nvidia-driver-cuda
       - cuda-devel
 
-  - type: script
-    snippets:
-      - "echo 'Configurando NVIDIA Open' && rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
-
   - type: files
     files:
       - source: system
