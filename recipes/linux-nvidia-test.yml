@@ -76,9 +76,9 @@ modules:
         - ru.linux_gaming.PortProton
     user: {}
 
-  - type: script
-    snippets:
-      - "rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm akmod-nvidia xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda"
+  #- type: script
+    #snippets:
+      #- "rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm akmod-nvidia xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda"
       #"rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda"
       # Nota: Para sistemas con Secure Boot, revise https://github.com/CheariX/silverblue-akmods-keys para firmar los módulos del kernel.
 
