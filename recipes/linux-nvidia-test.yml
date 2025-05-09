@@ -28,6 +28,13 @@ modules:
       #- "echo 'Configurando NVIDIA Open' && rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
       - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null"
 
+  - type: rpm-ostree
+    repos:
+      - https://negativo17.org/repos/fedora-nvidia.repo
+    install:
+      - nvidia-driver
+      - nvidia-driver-libs.i686
+
   - type: files
     files:
       - source: system
