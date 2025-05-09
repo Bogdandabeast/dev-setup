@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+# Información general de la imagen
+name: test
+description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext
+
+# Base de la imagen y versión
+base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
+image-version: 42
+
+# Configuración de módulos
+modules:
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-lto-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm # RPM Fusion para NVIDIA
+    install:
+      - kernel-cachyos-lto
+      - kernel-cachyos-lto-devel-matched
+      - libcap-ng-devel
+      - procps-ng-devel
+      - scx-scheds
+      - akmod-nvidia
+      - nvidia-vaapi-driver # Controlador abierto de NVIDIA
+
+  - type: script
+    snippets:
+      - "echo 'Habilitando SELinux' && setsebool -P domain_kernel_load_modules on"
+      - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto"
+      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" #librewolf repo
+
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  - type: rpm-ostree
+    repos:
+      - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
+      - vstudio.repo
+      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-%OS_VERSION%/che-zed-fedora-%OS_VERSION%.repo
+    install:
+      - cloudflare-warp
+      - deluge
+      - code
+      - zed
+      - librewolf
+      # Virt-manager y dependencias
+      - virt-manager
+      - libvirt-daemon-driver-network
+      - libvirt-daemon-driver-nodedev 
+      - libvirt-daemon-driver-qemu 
+      - libvirt-daemon-driver-storage-core 
+      - qemu-audio-spice 
+      - qemu-char-spice 
+      - qemu-device-display-qxl 
+      - qemu-device-display-virtio-gpu 
+      - qemu-device-display-virtio-vga 
+      - qemu-device-usb-redirect
+      - qemu-system-x86-core
+      # CLI utilidades
+      - fastfetch
+      - fish
+      - gh
+      - bat
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      install:
+        - com.valvesoftware.Steam
+        - com.heroicgameslauncher.hgl
+        - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+        - io.github.shiftey.Desktop
+        - io.github.dvlv.boxbuddyrs
+        - io.missioncenter.MissionCenter
+        - org.keepassxc.KeePassXC
+        - ru.linux_gaming.PortProton
+    user: {}
+
+  - type: signing
+
+alt-tags:
+  - cachyos-nvidia-latest
+
+
+
+
+
+
+
+
