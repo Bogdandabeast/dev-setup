@@ -2,7 +2,7 @@
 
 # Información general de la imagen
 name: test
-description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext
+description: Imagen de prueba con kernel CachyOS LTO, Addons, sched-ext y NVIDIA Open
 
 # Base de la imagen y versión
 base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
@@ -19,13 +19,15 @@ modules:
       - libcap-ng-devel
       - procps-ng-devel
       - scx-scheds
+      - akmod-nvidia
+      - xorg-x11-drv-nvidia
 
   - type: script
     snippets:
       - "echo 'Habilitando SELinux' && setsebool -P domain_kernel_load_modules on"
-      - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-rt"
-      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" #librewolf repo
-
+      - "echo 'Aplicando override del kernel CachyOS RT' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-rt"
+      - "echo 'Configurando NVIDIA Open' && rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
+      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" # librewolf repo
 
   - type: files
     files:
@@ -80,6 +82,7 @@ modules:
 
 alt-tags:
   - cachyos-latest
+
 
 
 
