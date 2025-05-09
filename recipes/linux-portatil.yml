@@ -62,9 +62,9 @@ modules:
       - gh
       - bat
       # Fix Codecs & Thumbnails
-      - libavcodec-freeworld
-      - ffmpegthumbs
-      - kffmpegthumbnailer
+      #- libavcodec-freeworld
+      #- ffmpegthumbs
+      #- kffmpegthumbnailer
       # distrobox
       - distrobox
 

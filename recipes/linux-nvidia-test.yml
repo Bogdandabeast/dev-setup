@@ -64,9 +64,9 @@ modules:
       - bat
       - distrobox
       # Fix Codecs & Thumbnails
-      - libavcodec-freeworld
-      - ffmpegthumbs
-      - kffmpegthumbnailer
+      #- libavcodec-freeworld
+      #- ffmpegthumbs
+      #- kffmpegthumbnailer
 
   - type: default-flatpaks
     notify: true
