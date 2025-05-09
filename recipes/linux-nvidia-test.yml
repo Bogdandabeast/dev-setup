@@ -14,21 +14,22 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-lto-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
-      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm # RPM Fusion para NVIDIA
+      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
     install:
       - kernel-cachyos-lto
       - kernel-cachyos-lto-devel-matched
       - libcap-ng-devel
       - procps-ng-devel
       - scx-scheds
-      - akmod-nvidia
-      - nvidia-vaapi-driver # Controlador abierto de NVIDIA
+      - rpmfusion-nonfree-release
+      - nvidia-open-driver # Controladores NVIDIA de código abierto
 
   - type: script
     snippets:
       - "echo 'Habilitando SELinux' && setsebool -P domain_kernel_load_modules on"
       - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto"
-      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" #librewolf repo
+      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" # librewolf repo
 
   - type: files
     files:
