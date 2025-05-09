@@ -83,7 +83,7 @@ modules:
       - "rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia"
       - "rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia-cuda"
       - "rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
-      - "# Nota: Para sistemas con Secure Boot, revise https://github.com/CheariX/silverblue-akmods-keys para firmar los módulos del kernel."
+      # Nota: Para sistemas con Secure Boot, revise https://github.com/CheariX/silverblue-akmods-keys para firmar los módulos del kernel.
 
   - type: signing
 
