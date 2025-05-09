@@ -34,6 +34,9 @@ modules:
     install:
       - nvidia-driver
       - nvidia-driver-libs.i686
+      - nvidia-settings
+      - nvidia-driver-cuda
+      - cuda-devel
 
   - type: files
     files:
