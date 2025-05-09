@@ -2,7 +2,7 @@
 
 # Información general de la imagen
 name: test
-description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext
+description: Imagen de prueba con kernel CachyOS LTO, Addons, sched-ext y NVIDIA Open
 
 # Base de la imagen y versión
 base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
@@ -25,9 +25,7 @@ modules:
     snippets:
       - "echo 'Habilitando SELinux' && setsebool -P domain_kernel_load_modules on"
       - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto"
-      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" #librewolf repo
-      - '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"' #brew installer
-
+      - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" # librewolf repo
 
   - type: files
     files:
@@ -78,10 +76,21 @@ modules:
         - ru.linux_gaming.PortProton
     user: {}
 
+  - type: script
+    name: nvidia-open
+    snippets:
+      - "echo 'Instalando paquete NVIDIA Open' && rpm-ostree install https://download.copr.fedorainfracloud.org/results/kwizart/nvidia-driver-rawhide/fedora-42-x86_64/07955716-akmod-nvidia-default-open/akmod-nvidia-default-open-1-1.fc42.x86_64.rpm"
+      - "echo 'Añadiendo configuración del kernel: blacklist nouveau y habilitando nvidia-drm.modeset=1' && rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
+      - "# Nota: Para sistemas con Secure Boot, revise https://github.com/CheariX/silverblue-akmods-keys para firmar los módulos del kernel."
+
   - type: signing
 
 alt-tags:
-  - cachyos-latest
+  - cachyos-nvidia-latest
+
+
+
+
 
 
 
