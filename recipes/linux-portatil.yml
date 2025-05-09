@@ -16,7 +16,6 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
     install:
       - kernel-cachyos-lto
-      - kernel-cachyos-lto-devel-matched
       - libcap-ng-devel
       - procps-ng-devel
       - scx-scheds
