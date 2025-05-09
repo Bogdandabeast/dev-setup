@@ -79,8 +79,10 @@ modules:
   - type: script
     name: nvidia-open
     snippets:
-      - "echo 'Instalando paquete NVIDIA Open' && rpm-ostree install https://download.copr.fedorainfracloud.org/results/kwizart/nvidia-driver-rawhide/fedora-42-x86_64/07955716-akmod-nvidia-default-open/akmod-nvidia-default-open-1-1.fc42.x86_64.rpm"
-      - "echo 'Añadiendo configuración del kernel: blacklist nouveau y habilitando nvidia-drm.modeset=1' && rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
+      - "rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+      - "rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia"
+      - "rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia-cuda"
+      - "rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1"
       - "# Nota: Para sistemas con Secure Boot, revise https://github.com/CheariX/silverblue-akmods-keys para firmar los módulos del kernel."
 
   - type: signing
