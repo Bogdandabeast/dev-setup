@@ -62,8 +62,6 @@ modules:
       - fish
       - docker
       - docker-compose
-      #codecs
-      - ffmpeg
       # distrobox
       - distrobox
 
