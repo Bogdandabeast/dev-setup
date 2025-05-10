@@ -19,6 +19,7 @@ modules:
       - libcap-ng-devel
       - procps-ng-devel
       - scx-scheds
+      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
   - type: script
     snippets:
@@ -26,7 +27,7 @@ modules:
       - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto"
       - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" #librewolf repo
       - "flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
-      - "rpm-ostree update --uninstall rpmfusion-free-release --uninstall rpmfusion-nonfree-release --install rpmfusion-free-release --install rpmfusion-nonfree-release"
+
 
   - type: files
     files:
@@ -62,7 +63,7 @@ modules:
       - fish
       - docker
       - docker-compose
-      # Fix Codecs & Thumbnails
+      #codecs
       - libavcodec-freeworld
       - ffmpegthumbs
       - kffmpegthumbnailer
