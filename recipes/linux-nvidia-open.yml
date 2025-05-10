@@ -24,6 +24,7 @@ modules:
       - deluge
       - zed
       #virt manager
+      - virt-manager
       - libvirt-daemon-driver-network
       - libvirt-daemon-driver-nodedev 
       - libvirt-daemon-driver-qemu 
