@@ -64,9 +64,7 @@ modules:
       - docker
       - docker-compose
       #codecs
-      - libavcodec-freeworld
-      - ffmpegthumbs
-      - kffmpegthumbnailer
+      - ffmpeg
       # distrobox
       - distrobox
 
