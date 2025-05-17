@@ -77,6 +77,8 @@ modules:
         - io.missioncenter.MissionCenter
         - org.keepassxc.KeePassXC
         - ru.linux_gaming.PortProton
+        - sh.loft.devpod
+        - org.zealdocs.Zeal
     user: {}
 
   - type: signing
