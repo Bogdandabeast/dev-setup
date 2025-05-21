@@ -63,8 +63,6 @@ modules:
       - docker
       - docker-compose
       # distrobox
-      - distrobox
-      - corectrl
 
   - type: default-flatpaks
     notify: true
