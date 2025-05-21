@@ -18,6 +18,7 @@ modules:
     install:
       #- kernel-cachyos-lto
       - kernel-cachyos
+      - devel
       - libcap-ng-devel
       - procps-ng-devel
       - scx-scheds
