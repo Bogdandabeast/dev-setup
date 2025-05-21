@@ -19,6 +19,7 @@ modules:
       - libcap-ng-devel
       - procps-ng-devel
       - scx-scheds
+      - make
 
   - type: script
     snippets:
