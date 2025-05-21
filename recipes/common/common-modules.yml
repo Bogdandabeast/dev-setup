@@ -32,10 +32,20 @@ modules:
         - addimageinfo.sh
 
     - type: rpm-ostree
+      repos:
+      - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
+      - vstudio.repo
+      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-%OS_VERSION%/che-zed-fedora-%OS_VERSION%.repo
       install:
       # launcher
         - rofi-wayland
-
+      #cloudflare warp
+        - cloudflare-warp
+      #coding
+        - code
+        - zed
+      #torrenting
+        - deluge
       # environment
         - fzf
         - tuned-ppd
@@ -118,6 +128,20 @@ modules:
         - breeze-icon-theme 
         - papirus-icon-theme
 
+      # virtualization
+        - virt-manager
+        - libvirt-daemon-driver-network
+        - libvirt-daemon-driver-nodedev 
+        - libvirt-daemon-driver-qemu 
+        - libvirt-daemon-driver-storage-core 
+        - qemu-audio-spice 
+        - qemu-char-spice 
+        - qemu-device-display-qxl 
+        - qemu-device-display-virtio-gpu 
+        - qemu-device-display-virtio-vga 
+        - qemu-device-usb-redirect
+        - qemu-system-x86-core
+
     - type: script
       scripts:
         - installproprietarypackages.sh
@@ -151,7 +175,7 @@ modules:
     - type: script
       scripts:
         - installrpmfusion.sh
-        - removeunusedrepos.sh
+        #- removeunusedrepos.sh
 
     - type: files
       files:
