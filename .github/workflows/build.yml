@@ -31,7 +31,7 @@ jobs:
           - linux-nvidia-open.yml
           #- linux-cosmic.yml
           - linux-portatil.yml
-          - linux-nvidia-nvk.yml
+          - sway-portatil.yml
           #- devsetup-nvidia.yml
     steps:
       # the build is fully handled by the reusable github action
