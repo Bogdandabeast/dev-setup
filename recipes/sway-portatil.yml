@@ -5,7 +5,7 @@ name: test
 description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext pero con sway
 
 # Base de la imagen y versión
-base-image: quay.io/fedora-ostree-desktops/sway
+base-image: quay.io/fedora-ostree-desktops/sway-atomic
 image-version: 42
 
 # Configuración de módulos
