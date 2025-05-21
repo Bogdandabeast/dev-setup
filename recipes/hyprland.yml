@@ -26,6 +26,7 @@ modules:
       - "echo 'Aplicando override del kernel' && rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto"
       - "curl -fsSL https://repo.librewolf.net/librewolf.repo | sudo tee /etc/yum.repos.d/librewolf.repo > /dev/null" #librewolf repo
       - "flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
+      - "sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Fedora-Hyprland/main/auto-install.sh)"
 
 
   - type: files
