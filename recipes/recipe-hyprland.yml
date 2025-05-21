@@ -1,14 +1,15 @@
-name: cosmic-atomic
+name: hyprland
 
-description: ublue custom image of cosmic-atomic
+description: ublue custom images
 
-base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
+base-image: quay.io/fedora-ostree-desktops/base-atomic
 
 image-version: 42 
 
 modules:
-  #- from-file: common/sddm-modules.yml
+  - from-file: common/sddm-modules.yml
   - from-file: common/common-modules.yml
   - from-file: common/cachyos-lto-kernel.yml
-  #- from-file: common/hyprland-modules.yml
+  - from-file: common/hyprland-modules.yml
+  # no need to regenerate initframe
   #- from-file: common/final-modules.yml 
