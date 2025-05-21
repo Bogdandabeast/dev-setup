@@ -2,11 +2,11 @@
 
 # Información general de la imagen
 name: test
-description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext pero con sway
+description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext pero con hyprland
 
 # Base de la imagen y versión
-base-image: quay.io/fedora-ostree-desktops/sway-atomic
-image-version: 42
+base-image: ghcr.io/wayblueorg/hyprland
+image-version: latest
 
 # Configuración de módulos
 modules:
@@ -83,7 +83,7 @@ modules:
   - type: signing
 
 alt-tags:
-  - cachyos-latest
+  - hyprland-latest
 
 
 
