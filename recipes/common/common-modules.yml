@@ -129,6 +129,9 @@ modules:
         - paper-icon-theme
         - breeze-icon-theme 
         - papirus-icon-theme
+        - qt6-qtsvg
+        - qt6-qtvirtualkeyboard
+        - qt6-qtmultimedia
 
       # virtualization
         - virt-manager
