@@ -1,19 +1,24 @@
+stages:
+  - name: build-msi-ec
+    from: docker.io/library/fedora
+    modules:
+      - type: script
+        snippets:
+          - dnf install -y kernel-devel make gcc # Instalar dependencias
+          - git clone https://github.com/BeardOverflow/msi-ec.git /src/msi-ec # Clonar el repositorio
+          - cd /src/msi-ec && make # Construir el módulo
+          - mkdir -p /out/ && mv /src/msi-ec/msi-ec.ko /out/ # Mover el archivo compilado
+
 modules:
-  - name: packages
-    install:
-      - kernel-devel
-      - make
-      - gcc
+  - type: copy
+    from: build-msi-ec
+    src: /out/msi-ec.ko
+    dest: /usr/lib/modules/$(uname -r)/extra/msi-ec.ko
 
-  - name: git
-    repo: "https://github.com/BeardOverflow/msi-ec.git"
-    dest: "/src/msi-ec"
+  - type: script
+    snippets:
+      - depmod -a # Registrar el módulo en el kernel
+      - echo "msi-ec" | tee -a /etc/modules-load.d/msi-ec.conf # Cargar el módulo en cada inicio
 
-  - name: run
-    command: |
-      cd /src/msi-ec
-      make
-      sudo make install
 
-  - name: notify
-    message: "Instalacion completada."
+
