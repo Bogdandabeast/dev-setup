@@ -1,0 +1,19 @@
+modules:
+  - name: packages
+    install:
+      - kernel-devel
+      - make
+      - gcc
+
+  - name: git
+    repo: "https://github.com/BeardOverflow/msi-ec.git"
+    dest: "/src/msi-ec"
+
+  - name: run
+    command: |
+      cd /src/msi-ec
+      make
+      sudo make install
+
+  - name: notify
+    message: "Instalacion completada."
