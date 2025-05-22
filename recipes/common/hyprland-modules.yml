@@ -1,8 +1,10 @@
 modules:
     - type: rpm-ostree
+      repos:
+        - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-42/solopasha-hyprland-fedora-42.repo
       install:
         - hyprland
-        - waybar
+        - waybar-git
         - xdg-desktop-portal-hyprland
         - swaylock
         - swayidle
