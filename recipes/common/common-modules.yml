@@ -44,6 +44,7 @@ modules:
       #coding
         - code
         - zed
+        - fish
       #torrenting
         - deluge
       # environment
@@ -93,6 +94,7 @@ modules:
         - firewall-config
 
       # file manager
+        - nautilus
         - thunar
         - thunar-archive-plugin 
         - thunar-volman

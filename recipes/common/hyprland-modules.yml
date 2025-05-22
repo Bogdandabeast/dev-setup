@@ -6,9 +6,12 @@ modules:
         - hyprland
         - waybar-git
         - xdg-desktop-portal-hyprland
-        - swaylock
-        - swayidle
+        - hyprlock
+        - hypridle
         - swaybg
+        - hyprpaper
+        - hyprsunset
+        - hyprpaper
 
     - type: files
       files:
