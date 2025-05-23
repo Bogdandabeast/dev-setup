@@ -1,12 +1,2 @@
 
-stages:
-  - name: mci-ec
-    from: docker.io/library/gcc
-    modules:
-      - type: script
-        snippets:
-          - apt-get update && apt-get install -y git # Install git
-          - git clone https://github.com/BeardOverflow/msi-ec && cd msi-ec # Clone the helix repo
-          - make
-          - make install
 
