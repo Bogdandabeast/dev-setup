@@ -1,0 +1,18 @@
+modules:
+  - type: default-flatpaks
+    notify: true
+    system:
+      install:
+        - com.valvesoftware.Steam
+        - com.heroicgameslauncher.hgl
+        - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+        - io.github.shiftey.Desktop
+        - io.github.dvlv.boxbuddyrs
+        - io.missioncenter.MissionCenter
+        - org.keepassxc.KeePassXC
+        - ru.linux_gaming.PortProton
+        - sh.loft.devpod
+        - org.zealdocs.Zeal
+        - me.iepure.devtoolbox
+        - io.podman_desktop.PodmanDesktop
+        - io.gitlab.librewolf-community
