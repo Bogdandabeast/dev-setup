@@ -199,6 +199,8 @@ modules:
       scripts:
         - settheming.sh
         - addbrewjustimport.sh
+        - disable_wifi_powersafe.sh
+        - scx_loader.sh
         - systemctldeamons.sh
 
     - type: signing
