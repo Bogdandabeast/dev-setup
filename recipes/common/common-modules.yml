@@ -36,11 +36,13 @@ modules:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - vstudio.repo
       - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-%OS_VERSION%/che-zed-fedora-%OS_VERSION%.repo
+      - tailscale.repo
       install:
       # launcher
         - rofi-wayland
-      #cloudflare warp
+      #vpn
         - cloudflare-warp
+        - tailscale
       #coding
         - code
         - zed
