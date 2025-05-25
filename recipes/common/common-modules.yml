@@ -202,7 +202,6 @@ modules:
         - disable_wifi_powersafe.sh
         - scx_loader.sh
         - systemctldeamons.sh
-        - "yes | curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate"
 
     - type: signing
       
