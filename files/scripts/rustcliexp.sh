@@ -20,5 +20,6 @@ done
 
 echo "All utillities have been installed 🚀"
 
-curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate
+yes | curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate
+
 

@@ -8,6 +8,7 @@ image-version: 42
 
 modules:
   - from-file: common/sddm-modules.yml
+  - from-fire: common/cachyos-lto-kernel.yml
   - from-file: common/hyprland-modules.yml
   - from-file: common/flatpak-modules.yml
   
