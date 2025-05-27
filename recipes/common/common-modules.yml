@@ -47,6 +47,7 @@ modules:
         - code
         - zed
         - fish
+        - ollama
       #torrenting
         - deluge
       # environment
