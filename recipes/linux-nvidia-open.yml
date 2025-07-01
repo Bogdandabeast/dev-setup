@@ -10,6 +10,7 @@ image-version: latest # También se puede usar "latest" si prefieres las actuali
 
 # Configuración de los módulos, ejecutados en orden
 modules:
+  - from-file: common/hyprland-modules.yml
   - type: files
     files:
       - source: system
