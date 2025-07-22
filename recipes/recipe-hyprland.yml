@@ -12,6 +12,7 @@ modules:
     - from-file: common/cachyos-lto-kernel.yml
     - from-file: common/hyprland-modules.yml
     - from-file: common/flatpak-modules.yml
+    - from-file: common/dx.yml
   
   # no need to regenerate initframe
   #- from-file: common/final-modules.yml 
