@@ -41,19 +41,5 @@ modules:
       - lutris
 
 
-  - type: default-flatpaks
-    notify: true # Envía una notificación al finalizar la instalación/eliminación (true/false).
-    system:
-      # Si no se especifica información sobre el repositorio, se usará Flathub por defecto.
-      install:
-        - io.github.shiftey.Desktop
-        - io.github.dvlv.boxbuddyrs
-        - io.missioncenter.MissionCenter
-        - org.keepassxc.KeePassXC
-        - ru.linux_gaming.PortProton
-        - sh.loft.devpod
-        - org.zealdocs.Zeal
-    user: {} # También agrega el repositorio Flathub para el usuario, pero no instala paquetes para el usuario.
-
 
   - type: signing # Configura las políticas y archivos necesarios para imágenes firmadas.
