@@ -28,6 +28,7 @@ jobs:
         recipe:
           # !! Add your recipes here
           #- devsetup.yml
+          - linux-nvidia-open.yml
           #- linux-cosmic.yml
           - recipe-hyprland.yml
           #- devsetup-nvidia.yml
