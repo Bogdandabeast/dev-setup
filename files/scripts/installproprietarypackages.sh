@@ -20,5 +20,4 @@ rpm-ostree override replace \
     mesa-libxatracker \
     mesa-va-drivers \
     mesa-vulkan-drivers \
-    gstreamer1-plugin-libav \
     rar
