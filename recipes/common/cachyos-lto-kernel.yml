@@ -1,4 +1,4 @@
-# install cachyos kernel and scx 
+# install cachyos kernel and SCX
 modules:
   - type: rpm-ostree
     repos:
