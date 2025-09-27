@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+# Información general de la imagen
+name: bluefinhyprlandx
+description: test bluefin with hyprland
+
+# Base de la imagen y versión
+base-image: ghcr.io/ublue-os/bluefin-dx
+image-version: latest # También se puede usar "latest" si prefieres las actualizaciones más recientes.
+
+# Configuración de los módulos, ejecutados en orden
+modules:
+  - from-file: common/hyprland-modules.yml
+  - type: files
+    files:
+      - source: system
+        destination: / # Copia todo el contenido del directorio "system" al directorio raíz de la imagen.
+
+  - type: rpm-ostree
+    repos:
+      - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
+      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-42/che-zed-fedora-42.repo
+    install:
+      - cloudflare-warp
+      - deluge
+      - zed
+
+  - type: signing # Configura las políticas y archivos necesarios para imágenes firmadas.
