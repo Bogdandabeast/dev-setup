@@ -37,6 +37,8 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-%OS_VERSION%/che-zed-fedora-%OS_VERSION%.repo
       - tailscale.repo
     install:
+      #browsers
+      - librewolf
       # launcher
       - rofi-wayland
       #vpn
@@ -44,7 +46,6 @@ modules:
       - tailscale
       #coding
       - code
-      - zed
       - fish
       - ollama
       #torrenting
@@ -72,7 +73,6 @@ modules:
       - gnome-disk-utility
       - ddcutil
       - openssl
-      - vim
       - just
       - alsa-firmware
       - p7zip
@@ -97,9 +97,6 @@ modules:
 
       # file manager
       - nautilus
-      - thunar
-      - thunar-archive-plugin
-      - thunar-volman
       - xarchiver
       - imv
       - p7zip
@@ -181,7 +178,7 @@ modules:
   - type: script
     scripts:
       - installrpmfusion.sh
-      #- removeunusedrepos.sh
+      - removeunusedrepos.sh
 
   - type: files
     files:
