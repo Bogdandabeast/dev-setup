@@ -6,7 +6,7 @@ description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext
 
 # Base de la imagen y versión
 base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
-image-version: 42
+image-version: 43
 
 # Configuración de módulos
 modules:

@@ -18,7 +18,7 @@ modules:
   - type: rpm-ostree
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
-      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-42/che-zed-fedora-42.repo
+      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-43/che-zed-fedora-43.repo
     install:
       - cloudflare-warp
       - deluge
