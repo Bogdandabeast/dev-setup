@@ -6,7 +6,7 @@
 @define-color inactive_module_color #a9a9a9;
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.8);
+    background-color: rgba(42, 48, 59, 0.8);
     border-color: rgba(100, 114, 125, 0.5);
     border-style: solid;
     color: #ffffff;
