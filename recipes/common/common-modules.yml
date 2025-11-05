@@ -38,6 +38,7 @@ modules:
       - tailscale.repo
     install:
       #browsers
+      - librewolf
       # launcher
       - rofi-wayland
       #vpn
