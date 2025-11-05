@@ -36,6 +36,7 @@ modules:
       - vstudio.repo
       - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-%OS_VERSION%/che-zed-fedora-%OS_VERSION%.repo
       - tailscale.repo
+      - https://repo.librewolf.net/librewolf.repo
     install:
       #browsers
       - librewolf
