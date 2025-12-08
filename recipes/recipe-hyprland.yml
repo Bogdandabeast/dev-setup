@@ -2,7 +2,7 @@ name: cosmic
 
 description: cosmic desktop
 
-base-image: fedora:fedora/43/x86_64/cosmic-atomic
+base-image: quay.io/fedora-ostree-desktops/cosmic-atomic:43
 
 image-version: 43
 
