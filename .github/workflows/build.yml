@@ -28,10 +28,10 @@ jobs:
         recipe:
           # !! Add your recipes here
           #- devsetup.yml
-          - linux-nvidia-open.yml
+          #- linux-nvidia-open.yml
           #- linux-cosmic.yml
           - recipe-hyprland.yml
-          - bluefin-hyprland.yml
+          #- bluefin-hyprland.yml
           #- devsetup-nvidia.yml
     steps:
       # the build is fully handled by the reusable github action

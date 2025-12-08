@@ -1,20 +1,17 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 
 # Información general de la imagen
-name: test
+name: fedora-cosmic
 description: Imagen de prueba con kernel CachyOS LTO, Addons y sched-ext
 
 # Base de la imagen y versión
-base-image: quay.io/fedora-ostree-desktops/cosmic-atomic
-image-version: 42
+base-image: fedora:fedora/43/x86_64/cosmic-atomic
+image-version: 43
 
 # Configuración de módulos
 modules:
   - type: rpm-ostree
     repos:
-      #- https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-lto-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
     install:
       #- kernel-cachyos-lto
       - kernel-cachyos-rt
@@ -79,7 +76,7 @@ modules:
   - type: signing
 
 alt-tags:
-  - cachyos-latest
+  - latest
 
 
 
