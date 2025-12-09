@@ -54,10 +54,6 @@ modules:
       - qemu-device-usb-redirect
       - qemu-system-x86-core
 
-  - type: script
-    scripts:
-      - installproprietarypackages.sh
-
   - type: rpm-ostree
     install:
       - heif-pixbuf-loader
