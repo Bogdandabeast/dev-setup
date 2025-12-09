@@ -54,7 +54,8 @@ modules:
       - qemu-device-display-virtio-vga
       - qemu-device-usb-redirect
       - qemu-system-x86-core
-
+      # video player and codecs
+      - vlc
   - type: script
     scripts:
       - removeunusedrepos.sh
