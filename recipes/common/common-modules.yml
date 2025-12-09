@@ -25,6 +25,7 @@ modules:
 
   - type: script
     scripts:
+      - installrpmfusion.sh
       - ensureautoupdates.sh
       - addimageinfo.sh
 
@@ -81,7 +82,6 @@ modules:
 
   - type: script
     scripts:
-      - installrpmfusion.sh
       - removeunusedrepos.sh
 
   - type: files
