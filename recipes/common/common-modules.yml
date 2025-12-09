@@ -1,8 +1,8 @@
 modules:
   - type: containerfile
     snippets:
-      - COPY --from=ghcr.io/ublue-os/akmods:main-42 /rpms /tmp/rpms
-      - COPY --from=ghcr.io/ublue-os/akmods:main-42 /kernel-rpms /tmp/rpms/kernel
+      - COPY --from=ghcr.io/ublue-os/akmods:main-43 /rpms /tmp/rpms
+      - COPY --from=ghcr.io/ublue-os/akmods:main-43 /kernel-rpms /tmp/rpms/kernel
       - RUN find /tmp/rpms
       - RUN rpm -q ublue-os-akmods-addons || rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods-addons*.rpm
   - type: script
@@ -25,114 +25,21 @@ modules:
 
   - type: script
     scripts:
-      - installandroidudev.sh
       - ensureautoupdates.sh
-      - fixupstreamicdloaderbug.sh
       - addimageinfo.sh
 
   - type: rpm-ostree
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
-      - vstudio.repo
-      - https://copr.fedorainfracloud.org/coprs/che/zed/repo/fedora-%OS_VERSION%/che-zed-fedora-%OS_VERSION%.repo
-      - tailscale.repo
       - https://repo.librewolf.net/librewolf.repo
     install:
       #browsers
       - librewolf
-      # launcher
-      - rofi-wayland
       #vpn
       - cloudflare-warp
       - tailscale
-      #coding
-      - code
-      - fish
-      - ollama
       #torrenting
       - deluge
-      # environment
-      - fzf
-      - tuned-ppd
-      - xorg-x11-server-Xwayland
-      - headsetcontrol
-      - mediainfo
-      - polkit
-      - xfce-polkit
-      - fprintd-pam
-      - xdg-user-dirs
-      - dbus-tools
-      - dbus-daemon
-      - wl-clipboard
-      - pavucontrol
-      - playerctl
-      - qt5-qtwayland
-      - qt6-qtwayland
-      - vulkan-validation-layers
-      - vulkan-tools
-      - google-noto-emoji-fonts
-      - gnome-disk-utility
-      - ddcutil
-      - openssl
-      - just
-      - alsa-firmware
-      - p7zip
-      - distrobox
-
-      # sound
-      - wireplumber
-      - pipewire
-      - pamixer
-      - pulseaudio-utils
-
-      # networking
-      - network-manager-applet
-      - NetworkManager-openvpn
-      - NetworkManager-openvpn-gnome
-      - NetworkManager-openconnect
-      - NetworkManager-openconnect-gnome
-      - bluez
-      - bluez-tools
-      - blueman
-      - firewall-config
-
-      # file manager
-      - nautilus
-      - xarchiver
-      - imv
-      - p7zip
-      - gvfs-mtp
-      - gvfs-gphoto2
-      - gvfs-smb
-      - gvfs-nfs
-      - gvfs-fuse
-      - gvfs-archive
-      - android-tools
-
-      # screenshot
-      - slurp
-      - grim
-
-      # display
-      - wlr-randr
-      - wlsunset
-      - brightnessctl
-      - kanshi
-
-      # notifications
-      - dunst
-
-      # theme and GUI
-      - fontawesome-fonts-all
-      - gnome-themes-extra
-      - gnome-icon-theme
-      - paper-icon-theme
-      - breeze-icon-theme
-      - papirus-icon-theme
-      - qt6-qtsvg
-      - qt6-qtvirtualkeyboard
-      - qt6-qtmultimedia
-
       # virtualization
       - virt-manager
       - libvirt-daemon-driver-network
@@ -194,7 +101,6 @@ modules:
 
   - type: script
     scripts:
-      - settheming.sh
       - addbrewjustimport.sh
       - disable_wifi_powersafe.sh
       - scx_loader.sh
