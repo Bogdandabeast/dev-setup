@@ -17,9 +17,11 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
-      - https://repo.librewolf.net/librewolf.repohttps://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+      [
+        "https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo",
+        "https://repo.librewolf.net/librewolf.repo",
+        "https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo",
+      ]
     install:
       #cf warp para cifrado de datos y más privacidad
       - cloudflare-warp
