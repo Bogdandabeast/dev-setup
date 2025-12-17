@@ -8,6 +8,7 @@ modules:
   - type: script
     scripts:
       - installsignedkernel.sh
+      - downloadlatestwinboatrpm.sh
 
   - type: containerfile
     snippets:
@@ -54,6 +55,7 @@ modules:
       - qemu-device-display-virtio-vga
       - qemu-device-usb-redirect
       - qemu-system-x86-core
+      #winboat
       # video player and codecs
       - vlc
   - type: script
