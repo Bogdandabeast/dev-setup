@@ -31,7 +31,6 @@ jobs:
           #- linux-nvidia-open.yml
           #- linux-cosmic.yml
           - recipe-cosmic.yml
-          - recipe-laura-linux.yml
           #- bluefin-hyprland.yml
           #- devsetup-nvidia.yml
     steps:
