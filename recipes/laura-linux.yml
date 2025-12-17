@@ -18,12 +18,16 @@ modules:
   - type: script
     scripts:
       - downloadlatestwinboatrpm.sh
-      - installbrave.sh
 
   - type: rpm-ostree
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - https://repo.librewolf.net/librewolf.repo
+      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+    keys:
+      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    optfix:
+      - brave.com
     install:
       #cf warp para cifrado de datos y más privacidad
       - cloudflare-warp
