@@ -34,9 +34,13 @@ modules:
     repos:
       - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
       - https://repo.librewolf.net/librewolf.repo
+      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+    keys:
+      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
       #browsers
       - librewolf
+      - brave-browser
       #vpn
       - cloudflare-warp
       - tailscale
