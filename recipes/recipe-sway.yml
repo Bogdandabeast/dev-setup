@@ -20,6 +20,10 @@ modules:
   - type: rpm-ostree
     install:
       - alacritty
+      - gnome-shell
+      - gnome-session
+      - gnome-settings-daemon
+      - mutter
     remove:
       - foot
 

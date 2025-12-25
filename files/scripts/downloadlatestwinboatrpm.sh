@@ -17,4 +17,3 @@ curl -L -o /tmp/winboat.rpm "$RPM_URL"
 
 echo "Installing RPM with dnf..."
 sudo dnf install -y /tmp/winboat.rpm
-sudo dnf groupinstall gnome-desktop
