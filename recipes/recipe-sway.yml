@@ -20,6 +20,9 @@ modules:
   - type: rpm-ostree
     install:
       - alacritty
+      - mako
+      - gammastep
+      - polkit-gnome
     #remove:
     # - foot
 
