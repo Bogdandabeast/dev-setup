@@ -22,7 +22,6 @@ modules:
       - alacritty
       - mako
       - gammastep
-      - polkit-gnome
     #remove:
     # - foot
 
