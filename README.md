@@ -3,7 +3,7 @@
 
 
 # El proyecto será migrado y refactorizado en este repositorio
-https://github.com/bogdandabeast/fedoracustom
+https://github.com/Bogdandabeast/customfedora
 
 
 ## **Introducción**
