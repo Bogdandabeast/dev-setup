@@ -1,6 +1,10 @@
 
 ---
-# **Hyprland Dev Setup con Universal Blue & CachyOS Kernel**
+
+
+# El proyecto será migrado y refactorizado en este repositorio
+https://github.com/bogdandabeast/fedoracustom
+
 
 ## **Introducción**
 Universal Blue es un proyecto impresionante que redefine la experiencia en Linux, proporcionando distribuciones altamente optimizadas. Desde **Bluefin**, ideal para portátiles, hasta **Bazzite**, pensado para gaming, Universal Blue mantiene un enfoque en la calidad y facilidad de uso.
@@ -60,5 +64,3 @@ cosign verify --key cosign.pub ghcr.io/bogdandabeast/dev-setup
 *(Sección pendiente)*
 
 ---
-
-
